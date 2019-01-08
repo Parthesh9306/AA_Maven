@@ -1,5 +1,6 @@
 package com.w2a.test;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
@@ -20,9 +21,12 @@ public class LoginTest {
 	}
 	
 	@Test
-	public void doLogin()
+	public void doLogin() throws InterruptedException
 	{
 		driver.get("https://www.freecrm.com/index.html");
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//a[text()='Features']")).click();
+
 	}
 	
 	@AfterSuite
